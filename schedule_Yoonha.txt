@@ -1,0 +1,3 @@
+- Make first draft of indivisual menu funtoins(wating list, host and manager login, etc) -Mon 03/06 by 12pm(10 hours)
+-Connect functions to GUI - Thu 03/09 by 12pm(10hours)
+ 
