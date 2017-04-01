@@ -9,7 +9,6 @@ class frame extends JFrame{
 		this("Restaurant Portal");
 	}
 
-
 	public frame(String title) {
 		this.setSize(500,400);
 		this.setTitle(title);

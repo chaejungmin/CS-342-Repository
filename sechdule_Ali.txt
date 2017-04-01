@@ -1,4 +1,0 @@
-portal- March 13, 3 hours
-Admin functionality  - March 15-17, 7 hours
-User functionality  - March 18-20, 7 hours
-refactor and cleanup code - April 1-3, 5 hours
