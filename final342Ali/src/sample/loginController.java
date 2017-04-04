@@ -14,17 +14,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.*;
+import javafx.fxml.*;
 
-
-
-import java.awt.*;
-import java.net.URI;
 
 /**
  * Created by alishirsalimian on 4/1/17.
  */
-public class loginController {
+public class loginController{
 
+
+    resturant_info BWW = new resturant_info();
 
     @FXML
     private Label Error_label;
@@ -49,7 +48,10 @@ public class loginController {
 
         if(username_box.getText().equals("admin")  && password_box.getText().equals("password1")){
 
+
+
             Parent admin_parent = FXMLLoader.load(getClass().getResource("adminpage.fxml"));
+
             Scene admin_scene = new Scene(admin_parent);
             Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
             admin_stage.setScene(admin_scene);

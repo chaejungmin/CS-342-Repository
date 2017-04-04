@@ -74,6 +74,8 @@ public class resturant_info {
 
     public void setPhoneNumber(String phoneNumber){this.phoneNumber = phoneNumber;}
 
+    public void setMenu(String Menu){this.menu = Menu;}
+
     public String getMenu(){
         return menu;
     }
@@ -117,6 +119,8 @@ public class resturant_info {
     public String getResturantName(){ return resturantName; }
 
     public String getPhoneNumber(){return phoneNumber;}
+
+
 
 
 
