@@ -38,10 +38,10 @@
             <Label layoutX="62.0" layoutY="99.0" prefHeight="17.0" prefWidth="37.0" text="Hours" />
             <Button fx:id="menu" layoutX="51.0" layoutY="41.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="27.0" prefWidth="66.0" text="Menu" textFill="#3315c9" />
             <Label layoutX="55.0" layoutY="164.0" text="Address" />
-            <Label layoutX="28.0" layoutY="222.0" text="Phone Number" />
+            <Label layoutX="33.0" layoutY="245.0" text="Phone Number" />
             <Label fx:id="Hours" layoutX="45.0" layoutY="128.0" text="Label" />
-            <Label fx:id="addressLabel" layoutX="28.0" layoutY="190.0" text="Label" />
-            <Label fx:id="phonenumber" layoutX="45.0" layoutY="261.0" text="Label" />
+            <Label fx:id="addressLabel" layoutX="40.0" layoutY="196.0" text="Label" />
+            <Label fx:id="phonenumber" layoutX="45.0" layoutY="271.0" text="Label" />
          </children>
          <opaqueInsets>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
