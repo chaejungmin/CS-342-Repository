@@ -7,8 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Controller  {
@@ -18,11 +16,12 @@ public class Controller  {
 
         Parent admin_parent = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene admin_scene = new Scene(admin_parent);
-        Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();;
+        Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
         admin_stage.setScene(admin_scene);
         admin_stage.show();
     }
 
+//Referenced Philip Johnson https://www.youtube.com/watch?v=LDVztNtJWOo.
 
 }
 

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resController">
+   <top>
+      <SplitPane dividerPositions="0.2568027210884354" prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="76.0" prefWidth="158.0">
+               <children>
+                  <Button fx:id="backToMain" layoutX="47.0" layoutY="12.0" mnemonicParsing="false" text="&lt;&lt;Back" textFill="#1b0ad3" />
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="restaurantName" minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="432.0">
+               <children>
+                  <Text fontSmoothingType="LCD" layoutX="143.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buffalo Wild Wings" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </AnchorPane>
+        </items>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </SplitPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="174.0" prefWidth="161.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="66.0" layoutY="99.0" prefHeight="17.0" prefWidth="32.0" text="Hour" />
+            <Text layoutX="35.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11:00am - 9:30pm" />
+            <Text layoutX="55.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+            <Text layoutX="57.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" />
+            <Text fx:id="phoneNum" layoutX="37.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="312.456.6789" />
+            <Button fx:id="menu" layoutX="51.0" layoutY="41.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="27.0" prefWidth="66.0" text="Menu" textFill="#3315c9" />
+            <Text layoutX="21.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="343 W Rosevelt st" />
+            <Text layoutX="22.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chicago IL 60645" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </AnchorPane>
+   </left>
+   <center>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="337.0" prefWidth="218.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="422.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <children>
+                  <Label layoutX="41.0" layoutY="27.0" text="Checking Wating Time" />
+                  <TextField fx:id="NumPPl" layoutX="28.0" layoutY="66.0" prefHeight="27.0" prefWidth="165.0" promptText="How many in the party?" />
+                  <Label fx:id="showTime" layoutX="233.0" layoutY="59.0" prefHeight="37.0" prefWidth="60.0" text="30" textAlignment="RIGHT">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="293.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="247.0" layoutY="27.0" text="Current Wait Time" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="437.0">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+               <children>
+                  <Button fx:id="Reservation" layoutX="33.0" layoutY="51.0" mnemonicParsing="false" onAction="#makeReservation" text="Make Reservation Now" textFill="#1d16e1">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="337.0" prefWidth="7.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="10.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
