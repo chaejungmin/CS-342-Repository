@@ -7,6 +7,7 @@ import java.lang.String;
 public class resturant_info {
 
     private int resturantID;
+    private String resturantName;
 
     private int waitTime;
     private String openTime;
@@ -17,6 +18,8 @@ public class resturant_info {
     private String state;
     private int zipcode;
 
+    private String phoneNumber;
+
 
     private int numReservation;
     private int[] reservationInfo;
@@ -26,7 +29,7 @@ public class resturant_info {
 
 
     public resturant_info(){
-
+        resturantName = "Buffalo Wild Wings";
         waitTime = 30;
 
         openTime = "11:00 AM";
@@ -37,7 +40,9 @@ public class resturant_info {
         state = "IL";
         city = "Chicago";
         menu = "http://www.buffalowildwings.com/en/menu/";
+        phoneNumber = "123.123.123";
     }
+
 
     public void setWaitTime(int waitTime){
         this.waitTime = waitTime;
@@ -66,6 +71,8 @@ public class resturant_info {
     public void setZipcode(int zipcode){
          this.zipcode = zipcode;
     }
+
+    public void setPhoneNumber(String phoneNumber){this.phoneNumber = phoneNumber;}
 
     public String getMenu(){
         return menu;
@@ -106,6 +113,11 @@ public class resturant_info {
     public int[] getReservationInfo(){
         return reservationInfo;
     }
+
+    public String getResturantName(){ return resturantName; }
+
+    public String getPhoneNumber(){return phoneNumber;}
+
 
 
 }

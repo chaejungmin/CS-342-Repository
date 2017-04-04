@@ -7,16 +7,30 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.adminpagecontroller">
    <children>
-      <Label layoutX="196.0" layoutY="41.0" text="(ResturantName) Admin Page" />
+      <Label fx:id="resturant_name" layoutX="196.0" layoutY="41.0" text="(ResturantName) Admin Page" />
       <TextField layoutX="64.0" layoutY="200.0" promptText="Opening Time" />
       <Button layoutX="248.0" layoutY="114.0" mnemonicParsing="false" onAction="#UpdateWaitTime" text="Update" />
       <TextField layoutX="64.0" layoutY="249.0" promptText="Closing Time" />
-      <Button layoutX="248.0" layoutY="249.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="248.0" layoutY="249.0" mnemonicParsing="false" onAction="#UpdateClosingTime" text="Update" />
       <TextField fx:id="WaitTime_Text" layoutX="64.0" layoutY="114.0" promptText="Wait TIme" />
-      <Button layoutX="248.0" layoutY="200.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="248.0" layoutY="200.0" mnemonicParsing="false" onAction="#UpdateOpenTime" text="Update" />
       <TextField layoutX="64.0" layoutY="158.0" promptText="Number of Guests" />
-      <Button layoutX="248.0" layoutY="158.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="248.0" layoutY="158.0" mnemonicParsing="false" onAction="#updateNumGuest" text="Update" />
       <TextField layoutX="64.0" layoutY="298.0" promptText="Contact Number" />
-      <Button layoutX="248.0" layoutY="298.0" mnemonicParsing="false" text="Update" />
+      <Button layoutX="248.0" layoutY="298.0" mnemonicParsing="false" onAction="#UpdateContactNumber" text="Update" />
+      <Label layoutX="330.0" layoutY="338.0" text="Reservation Names List" />
+      <Label layoutX="501.0" layoutY="338.0" text="Coming Soon..." />
+      <Button layoutX="517.0" layoutY="114.0" mnemonicParsing="false" text="Update" />
+      <TextField layoutX="330.0" layoutY="114.0" promptText="Menu Website" />
+      <TextField layoutX="330.0" layoutY="158.0" promptText="Address" />
+      <Button layoutX="517.0" layoutY="164.0" mnemonicParsing="false" text="Update" />
+      <TextField layoutX="330.0" layoutY="206.0" promptText="City" />
+      <Button layoutX="517.0" layoutY="206.0" mnemonicParsing="false" text="Update" />
+      <TextField layoutX="330.0" layoutY="249.0" promptText="State" />
+      <Button layoutX="517.0" layoutY="249.0" mnemonicParsing="false" text="Update" />
+      <TextField layoutX="330.0" layoutY="298.0" promptText="ZipCode" />
+      <Label layoutX="64.0" layoutY="338.0" text="Events" />
+      <Label layoutX="123.0" layoutY="339.0" text="Coming Soon..." />
+      <Button layoutX="517.0" layoutY="298.0" mnemonicParsing="false" text="Update" />
    </children>
 </Pane>
