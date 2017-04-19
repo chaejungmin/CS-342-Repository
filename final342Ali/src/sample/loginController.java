@@ -27,7 +27,7 @@ public class loginController{
     private static String myVariable;
 
 //    private Main main;
-//    public String username_con;
+     // public String username_con;
 //
 //    @FXML resController resController1;
 
@@ -50,7 +50,7 @@ public class loginController{
         int valid = isvalid(event);
         //System.out.println("BANGd:" + username_con);
 
-       // main.setUsername(username_con);
+        loginController.setMyVariable(myVariable);
 
         if(valid == 1){
             FXMLLoader loader = new FXMLLoader(
@@ -137,11 +137,11 @@ public class loginController{
     }
 
 
-    public static String getUsername() {
+    public static String getMyVariable() {
         return myVariable;
     }
 
-    public static void setUsername(String myVariable) {
+    public static void setMyVariable(String myVariable) {
         loginController.myVariable = myVariable;
     }
 

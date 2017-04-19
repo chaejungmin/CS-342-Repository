@@ -43,7 +43,6 @@ public class resController  extends resturant_info{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     @FXML
