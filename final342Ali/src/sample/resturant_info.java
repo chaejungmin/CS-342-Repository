@@ -159,7 +159,44 @@ public class resturant_info {
     }
 
     public int getWaitTime(){
-        return waitTime;
+
+        Connection c = null;
+        Statement stmt = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:resturantdb.db");
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+        int Wait_Time = 0;
+        System.out.println("Getting Webste");
+
+        try {
+
+            ResultSet rs = stmt.executeQuery("Select Wait_Time From Resturants WHERE Resturant_Names='Buffalo Wild Wings'");
+            System.out.println("Getting 2");
+
+            while (rs.next()) {
+                if (rs.getString("Wait_Time") != null) {
+                    Wait_Time = rs.getInt("Wait_Time");
+                    System.out.println(Wait_Time);
+                }
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+        return Wait_Time;
     }
 
     public String getOpenTime(){

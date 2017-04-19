@@ -108,21 +108,21 @@ public class loginController{
                     myVariable = username;
                     if (access == 0) {
                         valid = 2;
-                    } else if (access == 1) {
+                    }else if (access == 1) {
                         valid = 1;
                     }
-                } else {
+                }else{
                     System.out.println("FREE");
                 }
             }
-
             rs.close();
+        }catch (Exception e) {
+            System.out.println(e);
+        }finally{
             stmt.close();
             c.close();
-
-        } catch (Exception e) {
-            System.out.println(e);
         }
+
         System.out.println(valid);
         return valid;
     }
