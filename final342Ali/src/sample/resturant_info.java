@@ -1,6 +1,11 @@
 package sample;
 
 import java.lang.String;
+import java.sql.DriverManager;
+
+import java.io.IOException;
+import java.sql.*;
+
 /**
  * Created by alishirsalimian on 4/3/17.
  */
@@ -44,8 +49,41 @@ public class resturant_info {
     }
 
 
+
+
     public void setWaitTime(int waitTime){
+
         this.waitTime = waitTime;
+
+        Connection c = null;
+        Statement stmt = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:resturantdb.db");
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+        String website = "";
+        System.out.println("Getting Webste");
+
+        try {
+
+            int status = stmt.executeUpdate("Update Resturants Set Wait_Time= " + waitTime + " WHERE Resturant_Names =  'Buffalo Wild Wings'");
+            System.out.println("Getting 2");
+            stmt.close();
+            c.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+
     }
 
     public void setOpenTime(String openTime ){
@@ -76,8 +114,48 @@ public class resturant_info {
 
     public void setMenu(String Menu){this.menu = Menu;}
 
+
     public String getMenu(){
-        return menu;
+
+        Connection c = null;
+        Statement stmt = null;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:resturantdb.db");
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+        String website = "";
+        System.out.println("Getting Webste");
+
+        try {
+
+           ResultSet rs = stmt.executeQuery("Select Menu From Resturants WHERE Resturant_Names='Buffalo Wild Wings'");
+            System.out.println("Getting 2");
+
+            while (rs.next()) {
+                if (rs.getString("Menu") != null) {
+                    website = rs.getString("Menu");
+                    System.out.println(website);
+                }
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+
+        return website;
     }
 
     public int getWaitTime(){

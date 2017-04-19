@@ -53,23 +53,14 @@ public class loginController{
         loginController.setMyVariable(myVariable);
 
         if(valid == 1){
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource(
-                            "adminpage.fxml"
-                    )
-            );
-            Parent admin_parent = loader.load();
+            Error_label.setText(" ");
+            Parent user_parent = FXMLLoader.load(getClass().getResource("adminpage.fxml"));
+            Scene user_scene = new Scene(user_parent);
+            Stage user_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
+            user_stage.setScene(user_scene);
+            user_stage.show();
+            Error_label.setText("Sucess2");
 
-            resController controller = loader.getController();
-
-            //controller.setUsername1(username_con);
-
-            Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
-            Scene admin_scene = new Scene(admin_parent);
-
-            admin_stage.setScene(admin_scene);
-            admin_stage.show();
-            Error_label.setText("Sucess1");
 
         }else if(valid == 2){
 
