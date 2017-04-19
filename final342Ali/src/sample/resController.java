@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import sample.Main;
+
 
 import javax.xml.soap.Text;
 import java.awt.*;
@@ -18,6 +20,13 @@ import java.io.IOException;
  * Created by yoonhakang on 2017. 4. 2..
  */
 public class resController  extends resturant_info{
+    private static String myVariable;
+
+
+//    public String username1;
+//
+//    private Main maincontroller;
+
     @FXML
     private Button checkTime, menu, Reservation, backToMain;
 
@@ -39,6 +48,7 @@ public class resController  extends resturant_info{
 
     @FXML
     public void initialize(){
+      System.out.println("username1" + loginController.getMyVariable());
 
         ResName.setText(getResturantName());
         Hours.setText(getOpenTime() + "-" + getclosingTime());
@@ -70,5 +80,19 @@ public class resController  extends resturant_info{
             System.out.println("Error");
         }
     }
+
+//    public void setUsername1(String username){
+//        System.out.println(username);
+//        this.username1 = username;
+//
+//    }
+
+//    public void init(Main mainController) {
+//        this.maincontroller = mainController;
+//    }
+
+//    public void init(loginCon mainController) {
+//        loginCon = mainController;
+//    }
 
 }

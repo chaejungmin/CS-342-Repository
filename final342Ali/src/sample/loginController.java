@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import sample.Main;
+
 
 import java.io.IOException;
 import java.sql.*;
@@ -22,8 +24,13 @@ import javafx.fxml.*;
  */
 public class loginController{
 
+    private static String myVariable;
 
-    resturant_info BWW = new resturant_info();
+//    private Main main;
+//    public String username_con;
+//
+//    @FXML resController resController1;
+
 
     @FXML
     private Label Error_label;
@@ -36,29 +43,36 @@ public class loginController{
 
 
     @FXML
-    public void validLogin(ActionEvent event) throws IOException, SQLException {
+    public void validLogin(ActionEvent event) throws IOException, SQLException  {
+
         Error_label.setText(" ");
-        isvalid(event);
-    }
+        //username_con = "";
+        int valid = isvalid(event);
+        //System.out.println("BANGd:" + username_con);
 
-    public void isvalid(ActionEvent event) throws IOException, SQLException{
+       // main.setUsername(username_con);
 
-        System.out.println("UserName:" + username_box.getText());
-        System.out.println("pass:" + password_box.getText());
+        if(valid == 1){
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource(
+                            "adminpage.fxml"
+                    )
+            );
+            Parent admin_parent = loader.load();
 
-        if(username_box.getText().equals("admin")  && password_box.getText().equals("password1")){
+            resController controller = loader.getController();
 
+            //controller.setUsername1(username_con);
 
-
-            Parent admin_parent = FXMLLoader.load(getClass().getResource("adminpage.fxml"));
-
-            Scene admin_scene = new Scene(admin_parent);
             Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
+            Scene admin_scene = new Scene(admin_parent);
+
             admin_stage.setScene(admin_scene);
             admin_stage.show();
             Error_label.setText("Sucess1");
 
-        }else if(username_box.getText().equals("user")  && password_box.getText().equals("password")){
+        }else if(valid == 2){
+
             Error_label.setText(" ");
             Parent user_parent = FXMLLoader.load(getClass().getResource("restaurant_Info.fxml"));
             Scene user_scene = new Scene(user_parent);
@@ -66,11 +80,103 @@ public class loginController{
             user_stage.setScene(user_scene);
             user_stage.show();
             Error_label.setText("Sucess2");
-        }else{
+
+        }else if(valid == 3){
+
             Error_label.setText("Error Login");
+            username_box.setText("");
+            password_box.setText("");
+
         }
+
     }
-}
+
+    public int isvalid(ActionEvent event) throws IOException, SQLException {
+
+        Connection c = null;
+        Statement stmt = null;
+        int valid = 0;
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:resturantdb.db");
+            System.out.println("Opened database successfully");
+
+            stmt = c.createStatement();
+
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Users WHERE Username= " + "'" + username_box.getText() + "'"
+                    + " AND Password= " + "'" + password_box.getText() + "'");
+            while (rs.next()) {
+                if (rs.getString("USERNAME") != null && rs.getString("PASSWORD") != null) {
+                    String username = rs.getString("USERNAME");
+                    System.out.println("USERNAME = " + username);
+                    String password = rs.getString("PASSWORD");
+                    System.out.println("PASSWORD = " + password);
+                    int access = rs.getInt("Access");
+                    System.out.println("Access = " + access);
+                    myVariable = username;
+                    if (access == 0) {
+                        valid = 2;
+                    } else if (access == 1) {
+                        valid = 1;
+                    }
+                } else {
+                    System.out.println("FREE");
+                }
+            }
+
+            rs.close();
+            stmt.close();
+            c.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        System.out.println(valid);
+        return valid;
+    }
+
+
+    public static String getUsername() {
+        return myVariable;
+    }
+
+    public static void setUsername(String myVariable) {
+        loginController.myVariable = myVariable;
+    }
+
+
+
+//    public void init(Main mainController) {
+//        main = mainController;
+//    }
+
+//        if(username_box.getText().equals("admin")  && password_box.getText().equals("password1")){
+//
+//
+//
+//            Parent admin_parent = FXMLLoader.load(getClass().getResource("adminpage.fxml"));
+//
+//            Scene admin_scene = new Scene(admin_parent);
+//            Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
+//            admin_stage.setScene(admin_scene);
+//            admin_stage.show();
+//            Error_label.setText("Sucess1");
+//
+//        }else if(username_box.getText().equals("user")  && password_box.getText().equals("password")){
+//            Error_label.setText(" ");
+//            Parent user_parent = FXMLLoader.load(getClass().getResource("restaurant_Info.fxml"));
+//            Scene user_scene = new Scene(user_parent);
+//            Stage user_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
+//            user_stage.setScene(user_scene);
+//            user_stage.show();
+//            Error_label.setText("Sucess2");
+//        }else{
+//            Error_label.setText("Error Login");
+//        }
+    }
+
+
 
 //Referenced Philip Johnson from https://www.youtube.com/watch?v=LDVztNtJWOo.
 

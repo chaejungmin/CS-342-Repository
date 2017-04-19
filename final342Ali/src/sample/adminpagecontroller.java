@@ -18,7 +18,6 @@ import java.lang.String;
  */
 public class adminpagecontroller extends resturant_info{
 
-
     @FXML
     private TextField Menu_Text,WaitTime_Text, OpenTime_Text, ClosingTime_Text, ContactNum_Text, Street_Text, City_Text, State_Text, Zipcode_Text;
 
