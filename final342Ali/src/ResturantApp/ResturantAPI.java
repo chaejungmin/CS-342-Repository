@@ -1,4 +1,4 @@
-package sample;
+package ResturantApp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

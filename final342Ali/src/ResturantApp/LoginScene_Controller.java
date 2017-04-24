@@ -1,4 +1,4 @@
-package sample;
+package ResturantApp;
 
 import java.io.IOException;
 import javafx.event.ActionEvent;

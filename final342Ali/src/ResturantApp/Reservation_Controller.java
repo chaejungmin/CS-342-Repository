@@ -1,4 +1,4 @@
-package sample;
+package ResturantApp;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * Created by yoonhakang on 2017. 4. 3..
  */
-public class Reservation_Controller extends ReservationAPI{
+public class Reservation_Controller extends Reservation{
     @FXML
     private Button makeReservation, back;
     @FXML
@@ -47,15 +47,15 @@ public class Reservation_Controller extends ReservationAPI{
     // and insert it into the reservation db
     @FXML
     public void makeReservation(){
-        System.out.println(firstName.getText());
-        System.out.println(lastName.getText());
-        System.out.println(contact.getText());
-        System.out.println(email.getText());
-        System.out.println(howMany.getText());
-        System.out.println(memo.getText());
-        //System.out.println(time.getText());
-        System.out.println(date.getValue());
-        System.out.println(firstName.getText());
+        Reservation newres = new Reservation();
+
+        newres.setFirstName(firstName.getText());
+        newres.setLastName(firstName.getText());
+        newres.setContact(firstName.getText());
+        newres.setEmail(firstName.getText());
+        newres.setHowMany(firstName.getText());
+        newres.setMemo(memo.getText());
+
 
         //insertreservation()
 

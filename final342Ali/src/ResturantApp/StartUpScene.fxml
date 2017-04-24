@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginScene_Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ResturantApp.LoginScene_Controller">
    <children>
       <Button id="admin" layoutX="74.0" layoutY="187.0" mnemonicParsing="false" onAction="#Login" text="Admin" />
       <Button id="user" layoutX="270.0" layoutY="187.0" mnemonicParsing="false" onAction="#Login" text="User" />

@@ -1,4 +1,4 @@
-package sample;
+package ResturantApp;
 
 
 import javafx.fxml.FXML;
