@@ -5,18 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.fxml.FXML;
 
-import java.sql.*;
-import sample.loginController;
-import sample.resController;
-
-public class Main extends Application {
+public class StartUpController extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("mainpage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StartUpScene.fxml"));
         primaryStage.setTitle("Resturant Reserver App");
         Scene selectScene = new Scene(root);
         primaryStage.setScene(selectScene);

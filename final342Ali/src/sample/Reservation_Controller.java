@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * Created by yoonhakang on 2017. 4. 3..
  */
-public class reservationController {
+public class Reservation_Controller {
     @FXML
     private Button makeReservation, back;
     @FXML
