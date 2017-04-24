@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * Created by yoonhakang on 2017. 4. 3..
  */
-public class Reservation_Controller {
+public class Reservation_Controller extends ReservationAPI{
     @FXML
     private Button makeReservation, back;
     @FXML
@@ -30,10 +30,7 @@ public class Reservation_Controller {
     private ChoiceBox time;
     @FXML
     private DatePicker date;
-    @FXML
-    private String FirstName, LastName, PhoneNumber, Email;
-    @FXML
-    private int numOfPpl;
+
 
     @FXML
     public void goBack()throws IOException {
@@ -44,15 +41,30 @@ public class Reservation_Controller {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
+    // Get information from reservation scene
+    // and insert it into the reservation db
     @FXML
     public void makeReservation(){
+        System.out.println(firstName.getText());
+        System.out.println(lastName.getText());
+        System.out.println(contact.getText());
+        System.out.println(email.getText());
+        System.out.println(howMany.getText());
+        System.out.println(memo.getText());
+        //System.out.println(time.getText());
+        System.out.println(date.getValue());
+        System.out.println(firstName.getText());
+
+        //insertreservation()
+
 
     }
 
     public void initialize(){
+
+
     }
 
 

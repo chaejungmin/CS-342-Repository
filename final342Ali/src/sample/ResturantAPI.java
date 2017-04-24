@@ -38,8 +38,6 @@ public class ResturantAPI {
 
     private String menu;
 
-
-
     public void restaurant_Setter(String variable, String query,String resturant_name){
         Connection c = null;
         Statement stmt = null;
