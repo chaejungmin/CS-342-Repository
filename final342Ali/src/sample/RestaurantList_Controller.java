@@ -34,7 +34,7 @@ public class RestaurantList_Controller extends ResturantAPI{
     //going back to portal main
     @FXML
     public void goBack1(ActionEvent event)throws IOException, SQLException {
-        goButton(event, "mainpage.fxml");
+        goButton(event, "Login_Scene.fxml");
     }
 
 
