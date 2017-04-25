@@ -1,4 +1,4 @@
-package ResturantApp;
+package sample;
 
 /**
  * Created by alishirsalimian on 4/23/17.

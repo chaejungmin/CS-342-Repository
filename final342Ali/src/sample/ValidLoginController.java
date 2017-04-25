@@ -1,4 +1,4 @@
-package ResturantApp;
+package sample;
 
 
 
@@ -81,6 +81,7 @@ public class ValidLoginController {
         int valid = 0;
 
         try {
+
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:resturantdb.db");
             System.out.println("Opened database successfully");
@@ -108,11 +109,10 @@ public class ValidLoginController {
                 }
             }
             rs.close();
-        }catch (Exception e) {
-            System.out.println(e);
-        }finally{
             stmt.close();
             c.close();
+        }catch (Exception e) {
+            System.out.println(e);
         }
 
         System.out.println(valid);

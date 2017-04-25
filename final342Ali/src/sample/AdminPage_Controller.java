@@ -1,4 +1,4 @@
-package ResturantApp;
+package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,6 +59,7 @@ public class AdminPage_Controller extends ResturantAPI {
     
     public void UpdateMenu(){ setMenu(Menu_Text.getText(),resturantName); }
 
+    public void view_reservations(){}
 
 
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="249.0" layoutY="30.0" text="Reservations" />
+      <ListView layoutX="48.0" layoutY="67.0" prefHeight="252.0" prefWidth="505.0" />
+      <Button fx:id="cancel_reservation" layoutX="63.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" text="Cancel Reservation " />
+      <Button fx:id="edit_reservation" layoutX="230.0" layoutY="332.0" mnemonicParsing="false" onAction="#edit" prefHeight="27.0" prefWidth="140.0" text="Edit Reservation " />
+      <Button fx:id="checkin_reservation" layoutX="395.0" layoutY="332.0" mnemonicParsing="false" onAction="#checkin" prefHeight="27.0" prefWidth="140.0" text="Check In  " />
+   </children>
+</Pane>

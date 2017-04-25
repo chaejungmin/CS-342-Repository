@@ -1,4 +1,4 @@
-package ResturantApp;
+package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -141,7 +141,7 @@ public class ResturantAPI {
 
     public void setPhoneNumber(String phoneNumber,String resturantName){
         this.phoneNumber = phoneNumber;
-        restaurant_Setter(phoneNumber,"Phone Number" ,resturantName);
+        restaurant_Setter(phoneNumber,"Phone_Number" ,resturantName);
 
     }
 
@@ -195,7 +195,7 @@ public class ResturantAPI {
         return restaurant_Getter("Resturant_Names",resturantName);
     }
 
-    public String getPhoneNumber(String resturantName){return restaurant_Getter("Phone Number",resturantName);}
+    public String getPhoneNumber(String resturantName){return restaurant_Getter("Phone_Number",resturantName);}
 
 
     public void goButton(ActionEvent event, String fxmlPage)throws IOException, SQLException {
