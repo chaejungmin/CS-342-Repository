@@ -22,7 +22,7 @@ import java.sql.*;
  */
 public class ValidLoginController {
 
-    private static String myVariable;
+    private static String myusername;
 
     @FXML
     private Label Error_label;
@@ -42,7 +42,7 @@ public class ValidLoginController {
         int valid = isvalid(event);
         //System.out.println("BANGd:" + username_con);
 
-        ValidLoginController.setMyVariable(myVariable);
+        ValidLoginController.setMyusername(myusername);
 
         if(valid == 1){
             Error_label.setText(" ");
@@ -98,7 +98,7 @@ public class ValidLoginController {
                     System.out.println("PASSWORD = " + password);
                     int access = rs.getInt("Access");
                     System.out.println("Access = " + access);
-                    myVariable = username;
+                    myusername = username;
                     if (access == 0) {
                         valid = 2;
                     }else if (access == 1) {
@@ -120,12 +120,12 @@ public class ValidLoginController {
     }
 
 
-    public static String getMyVariable() {
-        return myVariable;
+    public static String getMyusername() {
+        return myusername;
     }
 
-    public static void setMyVariable(String myVariable) {
-        ValidLoginController.myVariable = myVariable;
+    public static void setMyusername(String myusername) {
+        ValidLoginController.myusername = myusername;
     }
 
     }

@@ -14,7 +14,6 @@ import java.sql.SQLException;
  * Created by yoonhakang on 2017. 4. 3..
  */
 public class RestaurantList_Controller extends ResturantAPI{
-    //ObservableList<String> timeList= FXCollections.observableArrayList(
 
     private static String resturant_selected = "";
 
@@ -47,6 +46,7 @@ public class RestaurantList_Controller extends ResturantAPI{
         goButton(event, "restaurant_info.fxml");
 
     }
+
 
     public static void setMyVariablesetselectresturant(String resturant_selected){
 

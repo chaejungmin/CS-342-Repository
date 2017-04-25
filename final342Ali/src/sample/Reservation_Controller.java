@@ -16,19 +16,13 @@ import java.io.IOException;
 public class Reservation_Controller extends Reservation{
 
     @FXML
-    private Button makeReservation, back;
+    private Button back;
     @FXML
     private Label resturant_name;
     @FXML
-    private Text restaurantName;
-    @FXML
-    private TextField firstName,lastName,contact,email,howMany;
+    private TextField contact,howMany;
     @FXML
     private TextArea memo;
-    @FXML
-    private ChoiceBox time;
-    @FXML
-    private DatePicker date;
 
 
     @FXML
@@ -47,25 +41,14 @@ public class Reservation_Controller extends Reservation{
     @FXML
     public void makeReservation(){
         Reservation reservation = new Reservation();
-
-        reservation.setFirstName(firstName.getText());
-        reservation.setLastName(lastName.getText());
         reservation.setContact(contact.getText());
-        reservation.setEmail(email.getText());
         reservation.setHowMany(howMany.getText());
         reservation.setMemo(memo.getText());
-
-
-        //insertreservation()
-
-
+        reservation.insertreservation();
     }
 
     public void initialize(){
         resturant_name.setText(RestaurantList_Controller.getResturant_selected());
-
-
-
     }
 
 

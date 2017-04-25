@@ -68,7 +68,7 @@ public class ResturantAPI {
     public String restaurant_Getter(String query,String resturant_name){
         Connection c = null;
         Statement stmt = null;
-        String website = "";
+        String resturant_info = "";
         System.out.println("Select "+query +" From Resturants WHERE Resturant_Names= "+ resturant_name +"");
 
         try {
@@ -86,8 +86,8 @@ public class ResturantAPI {
 
             while (rs.next()) {
                 if (rs.getString(query) != null) {
-                    website = rs.getString(query);
-                    System.out.println(website);
+                    resturant_info = rs.getString(query);
+                    System.out.println(resturant_info);
                 }
             }
             rs.close();
@@ -98,7 +98,44 @@ public class ResturantAPI {
         }
 
 
-        return website;
+        return resturant_info;
+    }
+
+
+    public String admin_resturnatGetter(String query,String admin_useranem){
+        Connection c = null;
+        Statement stmt = null;
+        String resturant_info = "";
+        System.out.println("Select "+query +" From Users WHERE Users= "+ admin_useranem +"");
+
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:resturantdb.db");
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+
+
+            System.out.println("Getting Webste");
+
+
+            ResultSet rs = stmt.executeQuery(String.format("Select %s From Users WHERE Username  = '%s'", query, admin_useranem));
+            System.out.println("Getting 2");
+
+            while (rs.next()) {
+                if (rs.getString(query) != null) {
+                    resturant_info = rs.getString(query);
+                    System.out.println(resturant_info);
+                }
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
+
+
+        return resturant_info;
     }
 
 
@@ -194,6 +231,14 @@ public class ResturantAPI {
     public String getResturantName(String resturantName){
         return restaurant_Getter("Resturant_Names",resturantName);
     }
+
+    public String getAdminResturantName(String admin_username){
+
+        String admin_resturant = admin_resturnatGetter("Resturant_Name",admin_username);
+        System.out.println("final342Ali.zip" + admin_resturant);
+        return admin_resturant;
+    }
+
 
     public String getPhoneNumber(String resturantName){return restaurant_Getter("Phone_Number",resturantName);}
 

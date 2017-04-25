@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -16,12 +17,15 @@ import java.io.IOException;
 public class AdminPage_Controller extends ResturantAPI {
     private static String myusername;
 
-    String resturantName = "Bufallo Wild Wilds";
+
     @FXML
     private TextField Menu_Text,WaitTime_Text, OpenTime_Text, ClosingTime_Text, ContactNum_Text, Street_Text, City_Text, State_Text, Zipcode_Text;
 
     @FXML
     private Button backButton;
+
+    @FXML
+    private Label resturant_name;
 
     public void goBack() throws IOException {
         Stage stage;
@@ -35,31 +39,32 @@ public class AdminPage_Controller extends ResturantAPI {
     }
 
     public void UpdateWaitTime() {
-        System.out.println("username1" + ValidLoginController.getMyVariable());
-
-
-        System.out.println( Integer.parseInt(WaitTime_Text.getText()));
-
-        setWaitTime( Integer.parseInt(WaitTime_Text.getText()),resturantName);
+        setWaitTime( Integer.parseInt(WaitTime_Text.getText()),getAdminResturantName(ValidLoginController.getMyusername()));
     }
 
-    public void UpdateOpenTime() { setOpenTime(OpenTime_Text.getText(),resturantName);}
+    public void UpdateOpenTime() { setOpenTime(OpenTime_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername()));}
 
-    public void UpdateClosingTime() {setclosingTime(ClosingTime_Text.getText(),resturantName);}
+    public void UpdateClosingTime() {setclosingTime(ClosingTime_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername()));}
 
-    public void UpdateContactNumber() {setPhoneNumber(ContactNum_Text.getText(),resturantName);}
+    public void UpdateContactNumber() {setPhoneNumber(ContactNum_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername()));}
 
-    public void UpdateStreet() {setstreet(Street_Text.getText(),resturantName);}
+    public void UpdateStreet() {setstreet(Street_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername()));}
 
-    public void UpdateCity(){ setcity(City_Text.getText(),resturantName);}
+    public void UpdateCity(){ setcity(City_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername()));}
 
-    public void UpdateState(){ setstate(State_Text.getText(),resturantName);}
+    public void UpdateState(){ setstate(State_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername()));}
 
-    public void UpdateZipcode(){ setZipcode(Integer.parseInt(Zipcode_Text.getText()),resturantName);}
+    public void UpdateZipcode(){ setZipcode(Integer.parseInt(Zipcode_Text.getText()),getAdminResturantName(ValidLoginController.getMyusername()));}
     
-    public void UpdateMenu(){ setMenu(Menu_Text.getText(),resturantName); }
+    public void UpdateMenu(){ setMenu(Menu_Text.getText(),getAdminResturantName(ValidLoginController.getMyusername())); }
 
     public void view_reservations(){}
+
+    @FXML
+    public void initialize(){
+        resturant_name.setText(getAdminResturantName(ValidLoginController.getMyusername()));
+
+    }
 
 
 }

@@ -18,15 +18,12 @@ import java.io.IOException;
  * Created by yoonhakang on 2017. 4. 2..
  */
 public class ResturantInfo_Controller extends ResturantAPI {
+
     private static String myusername;
     private static String selectedres;
 
-//    public String username1;
-//
-//    private StartUpController maincontroller;
-
     @FXML
-    private Button checkTime, menu, Reservation, backToMain;
+    private Button Reservation;
 
     @FXML
     private Label Hours,ResName,addressLabel,phonenumber,WaitTime;
@@ -45,10 +42,8 @@ public class ResturantInfo_Controller extends ResturantAPI {
 
     @FXML
     public void initialize(){
-        myusername = ValidLoginController.getMyVariable();
+        myusername = ValidLoginController.getMyusername();
         selectedres = RestaurantList_Controller.getResturant_selected();
-      System.out.println("username1" + ValidLoginController.getMyVariable());
-      System.out.println("Res Selected: " + RestaurantList_Controller.getResturant_selected());
         ResName.setText(getResturantName(selectedres));
         Hours.setText(getOpenTime(selectedres) + "-" + getclosingTime(selectedres));
         addressLabel.setText(getstreet(selectedres) + "\n" + getcity(selectedres) + "," + getstate(selectedres) + " "+ getZipcode(selectedres));

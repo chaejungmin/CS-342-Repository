@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminPage_Controller">
    <children>
-      <Label fx:id="resturant_name" layoutX="196.0" layoutY="41.0" text="(ResturantName) Admin Page" />
+      <Label fx:id="resturant_name" layoutX="196.0" layoutY="41.0" />
       <TextField fx:id="OpenTime_Text" layoutX="42.0" layoutY="200.0" prefHeight="27.0" prefWidth="174.0" promptText="Opening Time" />
       <Button layoutX="243.0" layoutY="138.0" mnemonicParsing="false" onAction="#UpdateWaitTime" text="Update" />
       <TextField fx:id="ClosingTime_Text" layoutX="42.0" layoutY="249.0" prefHeight="27.0" prefWidth="174.0" promptText="Closing Time" />

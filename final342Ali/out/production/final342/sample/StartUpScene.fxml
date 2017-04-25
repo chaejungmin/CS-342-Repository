@@ -8,7 +8,7 @@
    <children>
       <Button id="admin" layoutX="74.0" layoutY="187.0" mnemonicParsing="false" onAction="#Login" text="Admin" />
       <Button id="user" layoutX="270.0" layoutY="187.0" mnemonicParsing="false" onAction="#Login" text="User" />
-      <Button id="New User" layoutX="420.0" layoutY="187.0" mnemonicParsing="false" text="New User" />
+      <Button id="New User" layoutX="420.0" layoutY="187.0" mnemonicParsing="false" onAction="#newuser" text="New User" />
       <Label layoutX="221.0" layoutY="72.0" text="Resturant Resavation App" />
    </children>
 </Pane>
