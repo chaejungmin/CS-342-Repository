@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 
 public class LoginScene_Controller {
 
+
+    // login to profile screen
     @FXML
     public void Login(ActionEvent event) throws IOException{
         Parent admin_parent = FXMLLoader.load(getClass().getResource("Login_Scene.fxml"));
@@ -20,7 +22,7 @@ public class LoginScene_Controller {
         admin_stage.show();
     }
 
-
+    // create a new new user account
     @FXML
     public void newuser(ActionEvent event) throws IOException{
         Parent admin_parent = FXMLLoader.load(getClass().getResource("Newuser.fxml"));

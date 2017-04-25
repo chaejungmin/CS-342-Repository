@@ -17,7 +17,6 @@ import java.io.IOException;
 public class AdminPage_Controller extends ResturantAPI {
     private static String myusername;
 
-
     @FXML
     private TextField Menu_Text,WaitTime_Text, OpenTime_Text, ClosingTime_Text, ContactNum_Text, Street_Text, City_Text, State_Text, Zipcode_Text;
 

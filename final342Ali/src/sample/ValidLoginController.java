@@ -33,14 +33,13 @@ public class ValidLoginController {
     @FXML
     private TextField password_box;
 
-
+    // if it a valid login and based on the admin or user access
+    // we transfer to the next approaite scene
     @FXML
     public void validLogin(ActionEvent event) throws IOException, SQLException  {
 
         Error_label.setText(" ");
-        //username_con = "";
         int valid = isvalid(event);
-        //System.out.println("BANGd:" + username_con);
 
         ValidLoginController.setMyusername(myusername);
 
@@ -74,6 +73,7 @@ public class ValidLoginController {
 
     }
 
+    // validate the login
     public int isvalid(ActionEvent event) throws IOException, SQLException {
 
         Connection c = null;
@@ -93,19 +93,14 @@ public class ValidLoginController {
             while (rs.next()) {
                 if (rs.getString("USERNAME") != null && rs.getString("PASSWORD") != null) {
                     String username = rs.getString("USERNAME");
-                    System.out.println("USERNAME = " + username);
                     String password = rs.getString("PASSWORD");
-                    System.out.println("PASSWORD = " + password);
                     int access = rs.getInt("Access");
-                    System.out.println("Access = " + access);
                     myusername = username;
                     if (access == 0) {
                         valid = 2;
                     }else if (access == 1) {
                         valid = 1;
                     }
-                }else{
-                    System.out.println("FREE");
                 }
             }
             rs.close();
@@ -115,11 +110,10 @@ public class ValidLoginController {
             System.out.println(e);
         }
 
-        System.out.println(valid);
         return valid;
     }
 
-
+    // get and set the username that was used during the log on.
     public static String getMyusername() {
         return myusername;
     }

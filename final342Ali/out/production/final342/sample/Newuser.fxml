@@ -4,14 +4,15 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" fx:controller="sample.newuser_controller" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="newuser" fx:id="newuser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newuser_controller">
    <children>
       <Label layoutX="265.0" layoutY="65.0" text="New User" />
       <Label layoutX="105.0" layoutY="151.0" text="Username" />
       <Label layoutX="107.0" layoutY="215.0" text="Password" />
-      <PasswordField fx:id="password_text" layoutX="231.0" layoutY="210.0" />
-      <TextField fx:id="username_text" layoutX="231.0" layoutY="146.0" />
+      <PasswordField fx:id="password_text" layoutX="231.0" layoutY="211.0" />
+      <TextField fx:id="uname" layoutX="231.0" layoutY="146.0" />
       <Button layoutX="257.0" layoutY="297.0" mnemonicParsing="false" onAction="#createaccount" text="Create Account" />
+      <Button id="back" layoutX="39.0" layoutY="25.0" mnemonicParsing="false" onAction="#back1" text="&lt;&lt;Back" />
    </children>
+
 </Pane>

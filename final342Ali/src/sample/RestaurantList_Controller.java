@@ -42,13 +42,13 @@ public class RestaurantList_Controller extends ResturantAPI{
     @FXML
     public void goSubmit(ActionEvent event)throws IOException, SQLException{
         resturant_selected =  (String)restaurant_list.getValue();
-        RestaurantList_Controller.setMyVariablesetselectresturant(resturant_selected);
+        RestaurantList_Controller.setselectedresturant(resturant_selected);
         goButton(event, "restaurant_info.fxml");
 
     }
 
-
-    public static void setMyVariablesetselectresturant(String resturant_selected){
+    // setting the selected resturant and getting method to load from the API
+    public static void setselectedresturant(String resturant_selected){
 
         RestaurantList_Controller.resturant_selected = resturant_selected;
     }

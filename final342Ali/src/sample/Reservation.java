@@ -11,6 +11,7 @@ public class Reservation extends ResturantAPI{
     private String firstName,lastName,contact,email,howMany,memo;
 
 
+    //inserts reservation to the database
     public void reservation_insert(String username,String restaurantName){
         Connection c = null;
         Statement stmt = null;
@@ -34,7 +35,7 @@ public class Reservation extends ResturantAPI{
         }
     }
 
-
+    //deletes reservation to the database
     public void reservation_delete(String username,String restaurantName){
         Connection c = null;
         Statement stmt = null;
@@ -59,6 +60,7 @@ public class Reservation extends ResturantAPI{
     }
 
 
+
     public void insertreservation(){
         reservation_insert(ValidLoginController.getMyusername(),RestaurantList_Controller.getResturant_selected());
 
@@ -70,7 +72,7 @@ public class Reservation extends ResturantAPI{
 
     }
 
-
+    // get  and set reservations infomation from the user
     public void setContact(String lm){
         this.contact = lm;
     }
