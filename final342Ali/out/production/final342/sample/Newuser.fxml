@@ -11,7 +11,7 @@
       <Label layoutX="107.0" layoutY="215.0" text="Password" />
       <PasswordField fx:id="password_text" layoutX="231.0" layoutY="211.0" />
       <TextField fx:id="username" layoutX="231.0" layoutY="146.0" />
-      <Button layoutX="257.0" layoutY="297.0" mnemonicParsing="false" onAction="#createaccount" text="Create Account" />
+      <Button fx:id="createB" layoutX="257.0" layoutY="297.0" mnemonicParsing="false" onAction="#createaccount" text="Create Account" />
       <Button id="back" layoutX="39.0" layoutY="25.0" mnemonicParsing="false" onAction="#back1" text="&lt;&lt;Back" />
    </children>
 

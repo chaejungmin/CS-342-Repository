@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import java.awt.Button;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,13 +28,13 @@ public class newuser_controller {
     @FXML
     private PasswordField password_text;
     @FXML
-    private Button back;
+    private Button back, createB;
 
 
     // goes back to login
     @FXML
     public void back1(ActionEvent event) throws IOException{
-        Parent admin_parent = FXMLLoader.load(getClass().getResource("StartUpScene.fxml"));
+        Parent admin_parent = FXMLLoader.load(getClass().getResource("Login_Scene.fxml"));
         Scene admin_scene = new Scene(admin_parent);
         Stage admin_stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();// basic code to get the stage set to the current scence
         admin_stage.setScene(admin_scene);
@@ -45,7 +45,7 @@ public class newuser_controller {
     // creates an account based on info that
     // was put in the text fields
     @FXML
-    public void createaccount(){
+    public void createaccount() throws IOException{
 
             Connection c = null;
             Statement stmt = null;
@@ -62,6 +62,14 @@ public class newuser_controller {
             }catch(Exception e){
                 System.out.println(e);
             }
+        Stage stage;
+        Parent root;
+        stage= (Stage)createB.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("thankyou2.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
     }
 
 }
