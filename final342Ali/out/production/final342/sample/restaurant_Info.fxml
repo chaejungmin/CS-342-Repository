@@ -9,18 +9,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ResturantInfo_Controller">
    <top>
       <SplitPane dividerPositions="0.2568027210884354" prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="76.0" prefWidth="158.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="247.0">
                <children>
                   <Button fx:id="backToMain" layoutX="47.0" layoutY="12.0" mnemonicParsing="false" onAction="#goBackToMain" text="&lt;&lt;Back" textFill="#1b0ad3" />
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="restaurantName" minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="432.0">
+          <AnchorPane fx:id="restaurantName" minHeight="0.0" minWidth="0.0" prefHeight="51.0" prefWidth="468.0">
                <children>
-                  <Label fx:id="ResName" layoutX="135.0" layoutY="17.0" prefHeight="17.0" prefWidth="135.0" />
+                  <Label fx:id="ResName" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="42.0" layoutY="17.0" prefHeight="17.0" prefWidth="350.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -35,13 +38,13 @@
    <left>
       <AnchorPane prefHeight="174.0" prefWidth="161.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="62.0" layoutY="99.0" prefHeight="17.0" prefWidth="37.0" text="Hours" />
-            <Button fx:id="menu" layoutX="51.0" layoutY="41.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="27.0" prefWidth="66.0" text="Menu" textFill="#3315c9" />
-            <Label layoutX="55.0" layoutY="164.0" text="Address" />
-            <Label layoutX="33.0" layoutY="245.0" text="Phone Number" />
-            <Label fx:id="Hours" layoutX="45.0" layoutY="128.0" text="Label" />
-            <Label fx:id="addressLabel" layoutX="40.0" layoutY="196.0" text="Label" />
-            <Label fx:id="phonenumber" layoutX="45.0" layoutY="271.0" text="Label" />
+            <Label layoutX="62.0" layoutY="89.0" prefHeight="17.0" prefWidth="37.0" text="Hours" />
+            <Button fx:id="menu" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="67.0" prefWidth="97.0" text="Show Menu" textFill="#3315c9" />
+            <Label layoutX="54.0" layoutY="164.0" text="Address" />
+            <Label layoutX="33.0" layoutY="237.0" text="Phone Number" />
+            <Label fx:id="Hours" layoutX="14.0" layoutY="124.0" text="Label" />
+            <Label fx:id="addressLabel" layoutX="20.0" layoutY="197.0" text="Label" />
+            <Label fx:id="phonenumber" layoutX="45.0" layoutY="275.0" text="Label" />
          </children>
          <opaqueInsets>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -59,13 +62,16 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </opaqueInsets>
                <children>
-                  <Text layoutX="275.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes">
+                  <Text layoutX="297.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minutes">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
                   <Label layoutX="169.0" layoutY="14.0" text="Current Wait Time" />
-                  <Label fx:id="WaitTime" layoutX="103.0" layoutY="70.0" text="Label" />
+                  <Label fx:id="WaitTime" layoutX="99.0" layoutY="52.0" text="Label">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Label>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="437.0">

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AdminPage_Controller">
+   <children>
+      <Label fx:id="resturant_name" alignment="CENTER" contentDisplay="CENTER" layoutX="119.0" layoutY="27.0" prefHeight="29.0" prefWidth="422.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <TextField fx:id="OpenTime_Text" layoutX="42.0" layoutY="200.0" prefHeight="27.0" prefWidth="174.0" promptText="Opening Time" />
+      <Button layoutX="243.0" layoutY="138.0" mnemonicParsing="false" onAction="#UpdateWaitTime" text="Update" />
+      <TextField fx:id="ClosingTime_Text" layoutX="42.0" layoutY="249.0" prefHeight="27.0" prefWidth="174.0" promptText="Closing Time" />
+      <Button layoutX="243.0" layoutY="249.0" mnemonicParsing="false" onAction="#UpdateClosingTime" text="Update" />
+      <TextField fx:id="WaitTime_Text" layoutX="38.0" layoutY="138.0" prefHeight="27.0" prefWidth="174.0" promptText="Wait TIme" />
+      <Button layoutX="243.0" layoutY="200.0" mnemonicParsing="false" onAction="#UpdateOpenTime" text="Update" />
+      <TextField fx:id="ContactNum_Text" layoutX="42.0" layoutY="298.0" prefHeight="27.0" prefWidth="174.0" promptText="Contact Number" />
+      <Button layoutX="243.0" layoutY="298.0" mnemonicParsing="false" onAction="#UpdateContactNumber" text="Update" />
+      <Button layoutX="517.0" layoutY="114.0" mnemonicParsing="false" onAction="#UpdateMenu" text="Update" />
+      <TextField fx:id="Menu_Text" layoutX="330.0" layoutY="114.0" promptText="Menu Website" />
+      <TextField fx:id="Street_Text" layoutX="330.0" layoutY="158.0" promptText="Address" />
+      <Button layoutX="517.0" layoutY="158.0" mnemonicParsing="false" onAction="#UpdateStreet" text="Update" />
+      <TextField fx:id="City_Text" layoutX="330.0" layoutY="206.0" promptText="City" />
+      <Button layoutX="517.0" layoutY="206.0" mnemonicParsing="false" onAction="#UpdateCity" text="Update" />
+      <TextField fx:id="State_Text" layoutX="330.0" layoutY="249.0" promptText="State" />
+      <Button layoutX="517.0" layoutY="249.0" mnemonicParsing="false" onAction="#UpdateState" text="Update" />
+      <TextField fx:id="Zipcode_Text" layoutX="330.0" layoutY="298.0" promptText="ZipCode" />
+      <Label layoutX="55.0" layoutY="356.0" text="Events" />
+      <Label layoutX="125.0" layoutY="356.0" text="Coming Soon..." />
+      <Button layoutX="517.0" layoutY="298.0" mnemonicParsing="false" onAction="#UpdateZipcode" text="Update" />
+      <Button fx:id="backButton" layoutX="26.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" text="&lt;&lt;back" />
+      <Label layoutX="45.0" layoutY="119.0" text="Wait Time" />
+      <Label layoutX="42.0" layoutY="143.0" />
+      <Label layoutX="42.0" layoutY="177.0" text="Opening Time" />
+      <Label layoutX="45.0" layoutY="233.0" text="Closing Time" />
+      <Label layoutX="45.0" layoutY="281.0" text="Contact Number" />
+      <Label layoutX="330.0" layoutY="97.0" text="Menu Website" />
+      <Label layoutX="333.0" layoutY="143.0" text="Address" />
+      <Label layoutX="330.0" layoutY="192.0" text="City" />
+      <Label layoutX="330.0" layoutY="233.0" text="State" />
+      <Label layoutX="330.0" layoutY="281.0" text="Zip Code" />
+      <Button layoutX="348.0" layoutY="343.0" mnemonicParsing="false" onAction="#view_reservations" text="View Reservations" />
+   </children>
+</Pane>

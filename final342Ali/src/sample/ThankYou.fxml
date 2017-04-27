@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="229.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Thankyou_Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="97.0" layoutY="71.0" prefHeight="44.0" prefWidth="249.0" text="Reservation Successful ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="ok_button" layoutX="203.0" layoutY="159.0" mnemonicParsing="false" onAction="#goBack" text="OK" />
+      <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="114.0" layoutY="43.0" prefHeight="17.0" prefWidth="214.0" />
+   </children>
+</AnchorPane>
